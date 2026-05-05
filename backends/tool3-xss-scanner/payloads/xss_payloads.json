@@ -1,0 +1,35 @@
+{
+  "reflected": [
+    "<script>alert('XSS')</script>",
+    "<img src=x onerror=alert('XSS')>",
+    "<svg onload=alert('XSS')>",
+    "'\"><script>alert('XSS')</script>",
+    "<body onload=alert('XSS')>",
+    "<iframe src=javascript:alert('XSS')>",
+    "<input onfocus=alert('XSS') autofocus>",
+    "<details open ontoggle=alert('XSS')>",
+    "<marquee onstart=alert('XSS')>",
+    "javascript:alert('XSS')"
+  ],
+  "stored_patterns": [
+    "<script>",
+    "onerror=",
+    "onload=",
+    "javascript:",
+    "alert(",
+    "document.cookie",
+    "window.location",
+    "eval(",
+    "innerHTML"
+  ],
+  "dom_patterns": [
+    "document.write(",
+    "innerHTML",
+    "outerHTML",
+    "insertAdjacentHTML",
+    "eval(",
+    "setTimeout(",
+    "setInterval("
+  ],
+  "control_marker": "SECURESCOPE_CONTROL_12345"
+}

